@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Interactive Travel Experience — Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="home">
+  <header class="site-header">
+    <h1>Interactive Travel Experience</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="welcome-card">
+      <h2 id="welcomeMessage">Welcome!</h2>
+      <p id="dateTime"></p>
+      <button id="bgBtn" class="btn">Change Background Color</button>
+    </section>
+
+    <section class="slideshow-card">
+      <h3>Featured Views</h3>
+      <div class="slideshow">
+        <button id="prevBtn" class="slide-btn">Prev</button>
+        <div class="slide-window">
+          <img src="c:\Users\matselisotau\Documents\web design assignment 232\eiffel-tower.jpg" class="slide active" alt="Slide 1">
+          <img src="c:\Users\matselisotau\Documents\web design assignment 232\ima5.jpg" class="slide" alt="Slide 2">
+          <img src="c:\Users\matselisotau\Documents\web design assignment 232\ima 1.jpg" class="slide" alt="Slide 3">
+           
+        </div>
+        <button id="nextBtn" class="slide-btn">Next</button>
+      </div>
+      <div class="slide-controls">
+        <label><input type="checkbox" id="autoSlide"> Auto-play</label>
+      </div>
+    </p>Paris is one of the most beautiful cities in the world, often called the City of Light, and it is known for its rich history, culture, and art. The Eiffel Tower stands as the most famous landmark, attracting millions of visitors every year. The city is also home to world-class museums such as the Louvre, which houses the renowned Mona Lisa painting. Paris has earned a reputation as a global fashion capital, with stylish boutiques and designers shaping trends worldwide. Visitors can enjoy delicious French cuisine, including croissants, baguettes, and pastries, in the many cafés scattered around the city. The River Seine flows gracefully through Paris, offering stunning views and romantic boat rides. Blending tradition with modern life, Paris remains one of the most loved and unforgettable destinations in the world. 
+    </p>
+    </section>
+
+    <section class="weather-card">
+      <h3>Live Weather (sample destination)</h3>
+      <div id="weather">
+        <p>Loading weather... (change coords in <code>script.js</code>)</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <P>&copy;Paris</P>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

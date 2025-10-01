@@ -1,0 +1,148 @@
+/* Simple, neat base styling */
+:root{
+  --accent:#0d6efd;
+  --bg:#f5f6fb;
+  --card:#ffffff;
+  --muted:#666;
+  --radius:12px;
+  --pad:16px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#111;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+
+.site-header{
+  background:linear-gradient(90deg,#0d6efd,#6f42c1);
+  color:white;
+  padding:18px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.site-header h1{margin:0;font-size:18px}
+.site-header nav a{
+  color:rgba(255,255,255,0.9);
+  margin-left:12px;
+  text-decoration:none;
+  padding:6px 10px;
+  border-radius:8px;
+}
+.site-header nav a.active, .site-header nav a:hover{
+  background:rgba(255,255,255,0.12);
+}
+
+.container{
+  max-width:980px;
+  margin:28px auto;
+  padding:0 16px;
+}
+
+/* Cards */
+.welcome-card, .slideshow-card, .about-card, .gallery-controls, .weather-card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:var(--pad);
+  box-shadow:0 6px 18px rgba(15,15,20,0.06);
+  margin-bottom:18px;
+}
+
+/* Buttons */
+.btn, .filter-btn, .slide-btn{
+  background:var(--accent);
+  color:white;
+  border:0;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+}
+.filter-btn{background:#ddd;color:#333;padding:8px 10px;margin-right:8px}
+
+/* Slideshow */
+.slideshow{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.slide-window{
+  width:70%;
+  height:260px;
+  overflow:hidden;
+  border-radius:10px;
+  position:relative;
+}
+.slide{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  top:0;left:0;
+  opacity:0;
+  transform:scale(1);
+  transition:opacity .45s ease, transform .25s ease;
+}
+.slide.active{opacity:1}
+.slide:hover{transform:scale(1.02)}
+.slide-btn{background:transparent;color:var(--accent);border:2px solid var(--accent);padding:6px 10px}
+
+/* Gallery grid */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+}
+.gallery-item{
+  background:white;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 6px 14px rgba(10,10,20,0.04);
+  cursor:pointer;
+  transition:transform .15s ease;
+  display:flex;
+  flex-direction:column;
+}
+.gallery-item img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  display:block;
+  transition:transform .18s ease;
+}
+.gallery-item:hover{transform:translateY(-6px)}
+.gallery-item figcaption{padding:10px 12px;font-size:14px;color:var(--muted)}
+
+/* Lightbox */
+.lightbox{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  background:rgba(0,0,0,0.75);
+  z-index:9999;
+  flex-direction:column;
+  padding:20px;
+}
+.lightbox img{max-width:90%;max-height:70vh;border-radius:8px}
+.lightbox p{color:#fff;margin-top:8px}
+.lightbox-close{
+  position:absolute;
+  top:18px;
+  right:18px;
+  font-size:28px;
+  background:transparent;color:#fff;border:0;cursor:pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width:720px){
+  .slide-window{height:220px;width:100%}
+  .slideshow{flex-direction:column}
+  .slide-btn{width:100%}
+}
